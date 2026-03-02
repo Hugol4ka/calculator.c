@@ -4,50 +4,86 @@
 #include<ctype.h>
 
 /**
+ *operation - va executer l'opération
+ *@choix: Apelle l'operation choisi par l'utilisateur
+ *
+ *Return: void
+ */
+
+void operation(int choix)
+{
+	int op1, op2, result;
+		if (choix >= 1 && choix <= 5)
+	{
+		printf("Veuillez entrer la première valeur: \n");
+		scanf("%d", &op1);
+		printf("Veuillez entrer la seconde valeur: \n");
+		scanf("%d", &op2);
+			if (choix == 1)
+			result = op1 + op2;
+				else if (choix == 2)
+				result = op1 - op2;
+					if (choix == 3)
+					result = op1 * op2;
+				else if (choix == 4)
+				{
+					if (op1 && op2 == 0)
+					{
+						printf("Erreur: division par zero impossible\n");
+						return;
+					}
+					else
+					{
+						result = op1 / op2;
+					}
+
+				}
+				else if (choix == 5)
+				{
+					if (op1 && op2 == 0)
+					{
+					printf("Erreur: modulo par zero impossible\n");
+					return;
+					}
+					else
+					{
+						result = op1 % op2;
+					}
+				}
+	}
+	printf("Le resultat est : %d\n", result);
+}
+
+/**
 *main - Entry point
-*calculator whit menu
+*Menu for calculator
 *Return: Always 0 (Success)
 */
 
 int main(void)
 
 {
-	int menu = 0;
-	int op1, op2, result;
-		while (menu != 6)
-		{
-		printf("1. Addition\n2. Soustration\n3. Multiplication\n4. Division\n");
-		printf("5. Modulo\n6. Quitter\n");
-		printf("Merci d'entrer le chiffre correspondant a l'opération voulu :");
-		scanf("%d", &menu);
-			if (menu == 1)
+	int choix;
+
+		while (choix != 0)
 			{
-			printf("Veuilez entrer les valeurs a additionner :");
-			scanf("%d %d", &op1, &op2);
-			result = op1 + op2;
-			printf("le resultat de votre calcul est: %d\n", result);
-			}
-				else if (menu == 2)
+			printf("1. Addition\n");
+			printf("2. Soustration\n");
+			printf("3. Multiplication\n");
+			printf("4. Division\n");
+			printf("5. Modulo\n");
+			printf("0. Quitter\n");
+			printf("Merci d'entrer le chiffre correspondant a l'opération voulu :");
+			scanf("%d", &choix);
+				if (choix >= 1 && choix <= 5)
 				{
-				printf("Veuilez entrer les valeurs a soustraire :\n");
-				printf("Premier nombre:");
-				scanf("%d", &op1);
-				printf("Second nombre:");
-				scanf("%d", &op2);
-				result = op1 - op2;
-				printf("le resultat de votre calcul est: %d\n", result);
+				operation(choix);
 				}
-					if (menu == 3)
-					{
-					printf("Veuilez entrer les valeurs a multiplier :\n");
-					printf("Premier nombre:");
-					scanf("%d", &op1);
-					printf("Second nombre:");
-					scanf("%d", &op2);
-					result = op1 * op2;
-					printf("le resultat de votre calcul est: %d\n", result);
-					}
-		}
-		putchar('\n');
-		return (0);
+				else if (choix != 0)
+				{
+				printf("Merci de rentrer un chiffre entre 0 et 5\n");
+				}
+			}
+	putchar('\n');
+	return (0);
 }
