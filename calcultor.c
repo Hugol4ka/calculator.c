@@ -12,13 +12,12 @@
 
 void operation(int choix)
 {
-	int op1, op2, result;
-		if (choix >= 1 && choix <= 5)
-	{
-		printf("Veuillez entrer la première valeur: \n");
-		scanf("%d", &op1);
-		printf("Veuillez entrer la seconde valeur: \n");
-		scanf("%d", &op2);
+	float op1, op2, result;
+
+printf("Veuillez entrer la première valeur: \n");
+scanf("%f", &op1);
+printf("Veuillez entrer la seconde valeur: \n");
+scanf("%f", &op2);
 			if (choix == 1)
 			result = op1 + op2;
 				else if (choix == 2)
@@ -47,11 +46,11 @@ void operation(int choix)
 					}
 					else
 					{
-						result = op1 % op2;
+						result = (int)op1 % (int)op2;
 					}
 				}
-	}
-	printf("Le resultat est : %d\n", result);
+
+	printf("Le resultat est :%.2f\n", result);
 }
 
 /**
