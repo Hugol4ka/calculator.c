@@ -23,7 +23,7 @@ int main(void)
 			if (menu == 1)
 			{
 			printf("Veuilez entrer les valeurs a additionner :");
-			scanf("%d" "%d", &op1, &op2);
+			scanf("%d %d", &op1, &op2);
 			result = op1 + op2;
 			printf("le resultat de votre calcul est: %d\n", result);
 			}
