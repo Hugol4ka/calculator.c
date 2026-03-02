@@ -49,7 +49,6 @@ scanf("%f", &op2);
 						result = (int)op1 % (int)op2;
 					}
 				}
-
 	printf("Le resultat est :%.2f\n", result);
 }
 
