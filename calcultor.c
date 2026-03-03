@@ -46,7 +46,7 @@ scanf("%f", &op2);
 					}
 					else
 					{
-						result = (int)op1 % (int)op2;
+						result = (int)op1 % (int)op2; /*conversion de la valeur en int*/
 					}
 				}
 	printf("Le resultat est :%.2f\n", result);
@@ -71,7 +71,7 @@ int main(void)
 			printf("4. Division\n");
 			printf("5. Modulo\n");
 			printf("0. Quitter\n");
-			printf("Merci d'entrer le chiffre correspondant a l'opération voulu :");
+			printf("Merci d'entrer le chiffre correspondant a l'opération voulu :\n");
 			scanf("%d", &choix);
 				if (choix >= 1 && choix <= 5)
 				{
@@ -82,6 +82,7 @@ int main(void)
 				printf("Merci de rentrer un chiffre entre 0 et 5\n");
 				}
 			}
+	printf("Aurevoir.");
 	putchar('\n');
 	return (0);
 }
